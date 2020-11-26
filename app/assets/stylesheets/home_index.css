@@ -20,9 +20,9 @@
 }
 
 .devise-link {
-  border: 1px solid #F5E5B5;
-  padding: 5px 3vmin;
-  margin: 0 4vmin;
+  border: 1px solid #D3CFD1;
+  padding: 7px 4vmin;
+  margin: 0 2vmin;
 }
 
 .contents-link-wrapper {
@@ -31,13 +31,13 @@
 }
 
 .contents-link {
-  border: 1px solid #0107422a;
+  border: 1px solid #D3CFD1;
   padding: 7px 8vmin;
   width: 35vmin;
   display: inline-block;
   margin: 3vmin 0;
   font-size: 8vmin;
-  box-shadow: 4px 7px #0107422a;
+  box-shadow: 4px 7px #D3CFD1;
   border-radius: 6px;
-  background-color: #e9d9e55e;
+  background-color: #F7F1F5;
 }
