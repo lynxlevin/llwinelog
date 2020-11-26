@@ -1,0 +1,2 @@
+module WinelogsHelper
+end
