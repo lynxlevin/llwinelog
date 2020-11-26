@@ -1,0 +1,13 @@
+<header>
+  <div class="header-left">
+    <% if user_signed_in? %>
+      <%= link_to "記録する", "#", class:"header-content" %>
+    <% end %>
+  </div>
+  <div class="header-right">
+    <% if user_signed_in? %>
+      <%= link_to "設定", "#", class:"header-content" %>
+      <%= link_to "ログアウト", destroy_user_session_path, method: "DELETE", class:"header-content" %>
+    <% end %>
+  </div>
+</header>

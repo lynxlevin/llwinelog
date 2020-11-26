@@ -1,0 +1,43 @@
+.main-wrapper {
+  width: 100%;
+  background-color: white;
+  border-right: 1px solid #0107422a;
+  border-left: 1px solid #0107422a;
+  border-top: none;
+  border-bottom: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.index-wrapper {
+  padding: 0 3vmin 3vmin;
+  width: calc(100% - 6vmin);
+}
+
+.title-message {
+  padding: 0;
+}
+
+.devise-link {
+  border: 1px solid #F5E5B5;
+  padding: 5px 3vmin;
+  margin: 0 4vmin;
+}
+
+.contents-link-wrapper {
+  margin: 5vmin 0;
+  text-align: center;
+}
+
+.contents-link {
+  border: 1px solid #0107422a;
+  padding: 7px 8vmin;
+  width: 35vmin;
+  display: inline-block;
+  margin: 3vmin 0;
+  font-size: 8vmin;
+  box-shadow: 4px 7px #0107422a;
+  border-radius: 6px;
+  background-color: #e9d9e55e;
+}

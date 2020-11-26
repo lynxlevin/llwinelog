@@ -1,0 +1,21 @@
+<div class="main-wrapper">
+  <div class="index-wrapper">
+    <% if user_signed_in? %>
+      <h3><%= "#{current_user.username}さん、いらっしゃい!" %></h3>
+    <% end %>
+    <div class="index-title">
+      <h1>LynxLevin's<br>　Wine Log</h1>
+      <p><%= link_to "ワインの記録を手軽につけるサイト", about_path, class:"title-message" %><br>を目指します</p>
+    </div>
+  </div>
+  <div class="devise-link-wrapper">
+    <% unless user_signed_in? %>
+      <%= link_to "ログイン", new_user_session_path, class:"devise-link" %>
+      <%= link_to "新規登録", new_user_registration_path, class:"devise-link" %>
+    <% end %>
+  </div>
+  <div class="contents-link-wrapper">
+    <%= link_to "記 録", "#", class:"contents-link" %>
+    <%= link_to "使い方", "#", class:"contents-link" %>
+  </div>
+</div>
