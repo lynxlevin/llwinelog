@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_26_051107) do
+ActiveRecord::Schema.define(version: 2020_11_26_091416) do
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "username", null: false
@@ -25,4 +25,33 @@ ActiveRecord::Schema.define(version: 2020_11_26_051107) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "winelogs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "wine_name", null: false
+    t.date "tasted_date"
+    t.integer "type_id"
+    t.integer "country_id"
+    t.integer "region1_id"
+    t.string "region2"
+    t.string "region3"
+    t.string "producer"
+    t.integer "class_id"
+    t.integer "vintage"
+    t.string "grape1"
+    t.string "grape2"
+    t.string "grape3"
+    t.string "grape4"
+    t.string "grape5"
+    t.integer "price_range_id"
+    t.string "shop"
+    t.integer "rating_id"
+    t.text "comment"
+    t.integer "alcohol"
+    t.string "importer_name"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_winelogs_on_user_id"
+  end
+
+  add_foreign_key "winelogs", "users"
 end
