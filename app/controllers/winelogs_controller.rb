@@ -1,5 +1,6 @@
 class WinelogsController < ApplicationController
   def new
+    @winelog = Winelog.new
   end
 
   def create
@@ -16,5 +17,5 @@ class WinelogsController < ApplicationController
 
   def destroy
   end
-  
+
 end
