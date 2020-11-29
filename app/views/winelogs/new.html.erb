@@ -1,6 +1,6 @@
 <%= form_with(model: @winelog, local: true)do |f| %>
   
-  <%# <%= render 'shared/error_messages', model: f.object %> %>
+  <%# <%= render 'shared/error_messages', model: f.object %>
 
   <%# <div class="img-upload"> %>
     <%# 画像 %>
@@ -8,6 +8,11 @@
     <%# <%= f.file_field :image, id:"item-image" %>
   <%# </div> %>
   <%# <div id="image-list"></div> %>
+
+  <div class="field">
+    <%= label_tag :default_template %><br />
+    <%= f.collection_select(:default_template, DefaultTemplate.order('sort_order ASC'), :id, :template_name) %>
+  </div>
 
   <div class="field">
     <%= f.label :wine_name %><br />
