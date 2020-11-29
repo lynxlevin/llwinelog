@@ -1,7 +1,7 @@
 <header>
   <div class="header-left">
     <% if user_signed_in? %>
-      <%= link_to "記録する", "#", class:"header-content" %>
+      <%= link_to "記録する", new_winelog_path, class:"header-content" %>
     <% end %>
   </div>
   <div class="header-right">

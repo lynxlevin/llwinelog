@@ -16,7 +16,7 @@
 
   <div class="field">
     <%= f.label :tasted_date %><br />
-    <%= f.date_field :date, value: Date.today %>
+    <%= f.date_field :tasted_date, value: Date.today %>
   </div>
 
   <div class="field">
@@ -51,7 +51,7 @@
 
   <div class="field">
     <%= f.label :class_id %><br />
-    <%= f.grouped_collection_select(:region1_id, DefaultRegion1.order('sort_order ASC'), :default_classes, :name, :id, :name) %>
+    <%= f.grouped_collection_select(:class_id, DefaultRegion1.order('sort_order ASC'), :default_classes, :name, :id, :name) %>
   </div>
 
   <div class="field">

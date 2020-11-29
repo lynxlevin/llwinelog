@@ -3,23 +3,19 @@ class Winelog < ApplicationRecord
 
   validates :wine_name, presence: true
   with_options numericality: { greater_than: 0,
-                               less_than: 10_000,
+                               less_than: 1_000_000,
                                only_integer: true },
-               length: { maximum: 4 } do
-    validates :type
-    validates :country
-    validates :region1
-    validates :class
+               length: { maximum: 7 } do
+    validates :type_id
+    validates :country_id
+    validates :region1_id
+    validates :class_id
     validates :vintage
-    validates :rating
+    validates :rating_id
+    validates :price
   end
-  validates :price, numericality: { greater_than: 0,
-                                    less_than: 10_000_000,
-                                    only_integer: true },
-                    length: { maximum: 7 }
 
   validates :alcohol, numericality: { greater_than: 0,
-                                      less_than: 101,
-                                      only_integer: true },
-                      length: { maximum: 3 }
+                                      less_than: 101},
+                      length: { maximum: 4 }
 end
