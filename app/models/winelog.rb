@@ -11,9 +11,12 @@ class Winelog < ApplicationRecord
     validates :region1
     validates :class
     validates :vintage
-    validates :price_range
     validates :rating
   end
+  validates :price, numericality: { greater_than: 0,
+                                    less_than: 10_000_000,
+                                    only_integer: true },
+                    length: { maximum: 7 }
 
   validates :alcohol, numericality: { greater_than: 0,
                                       less_than: 101,

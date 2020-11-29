@@ -1,0 +1,2 @@
+class DefaultRating < ApplicationRecord
+end

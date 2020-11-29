@@ -16,25 +16,22 @@
 
   <div class="field">
     <%= f.label :tasted_date %><br />
-    <%= f.date_field :date %>
+    <%= f.date_field :date, value: Date.today %>
   </div>
 
   <div class="field">
     <%= f.label :type_id %><br />
-  <%# <%= f.collection_select(:days_to_ship_id, DaysToShip.all, :id, :name, {}, {class:"select-box", id:"item-scheduled-delivery"}) %> %>
-
+    <%= f.collection_select(:type_id, DefaultType.all, :id, :name) %>
   </div>
 
   <div class="field">
     <%= f.label :country_id %><br />
-  <%# <%= f.collection_select(:days_to_ship_id, DaysToShip.all, :id, :name, {}, {class:"select-box", id:"item-scheduled-delivery"}) %> %>
-
+    <%= f.collection_select(:country_id, DefaultCountry.order('sort_order ASC'), :id, :name) %>
   </div>
 
   <div class="field">
     <%= f.label :region1_id %><br />
-  <%# <%= f.collection_select(:days_to_ship_id, DaysToShip.all, :id, :name, {}, {class:"select-box", id:"item-scheduled-delivery"}) %> %>
-
+    <%= f.grouped_collection_select(:region1_id, DefaultCountry.order('sort_order ASC'), :default_region1s, :name, :id, :name) %>
   </div>
 
   <div class="field">
@@ -54,13 +51,12 @@
 
   <div class="field">
     <%= f.label :class_id %><br />
-  <%# <%= f.collection_select(:days_to_ship_id, DaysToShip.all, :id, :name, {}, {class:"select-box", id:"item-scheduled-delivery"}) %> %>
-
+    <%= f.grouped_collection_select(:region1_id, DefaultRegion1.order('sort_order ASC'), :default_classes, :name, :id, :name) %>
   </div>
 
   <div class="field">
     <%= f.label :vintage %><br />
-    <%= f.number_field(:vintage, in: 1800..2100, step: 1) %>
+    <%= f.number_field(:vintage, in: 1800..2100, step: 1, value: 2000) %>
   </div>
 
   <div class="field">
@@ -87,12 +83,10 @@
     <%= f.label :grape5 %><br />
     <%= f.text_field :grape5 %>
   </div>
-  v
 
   <div class="field">
-    <%= f.label :price_range_id %><br />
-  <%# <%= f.collection_select(:days_to_ship_id, DaysToShip.all, :id, :name, {}, {class:"select-box", id:"item-scheduled-delivery"}) %> %>
-
+    <%= f.label :price %><br />
+    <%= f.number_field(:price, in: 0..10_000_000, step: 1) %>
   </div>
 
   <div class="field">
@@ -102,8 +96,7 @@
 
   <div class="field">
     <%= f.label :rating_id %><br />
-  <%# <%= f.collection_select(:days_to_ship_id, DaysToShip.all, :id, :name, {}, {class:"select-box", id:"item-scheduled-delivery"}) %> %>
-
+    <%= f.collection_select(:rating_id, DefaultRating.all, :id, :name) %>
   </div>
 
   <div class="field">
