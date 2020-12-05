@@ -26,7 +26,8 @@ window.addEventListener("load", () => {
         if (option.label == selectedName || option.label == "--" || selectedId == 1) {
           option.style.display = "";
         } else {
-          option.style.display = "none";
+          option.outerHTML = `<span style="display: none;">${option.outerHTML}</span>`;
+          // option.style.display = "none";
         }
       });
       if (Math.floor(childSelection.value / 100) != selectedId) {
