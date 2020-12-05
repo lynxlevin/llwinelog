@@ -4,7 +4,7 @@
   {{message}}
   {{wine}}
   <%= form_with(model: @winelog, local: true)do |f| %>
-    
+
     <%# <%= render 'shared/error_messages', model: f.object %>
 
     <%# <div class="img-upload"> %>
@@ -38,7 +38,7 @@
 
     <div class="field">
       <%= f.label :country_id %><br />
-      <%= f.collection_select(:country_id, DefaultCountry.order('sort_order ASC'), :id, :name, {}, { 'v-model': 'selected' }) %>
+      <%= f.collection_select(:country_id, DefaultCountry.order('sort_order ASC'), :id, :name, {}, {}) %>
     </div>
 
     <div class="field">
@@ -63,7 +63,7 @@
 
     <div class="field">
       <%= f.label :class_id %><br />
-      <%= f.grouped_collection_select(:class_id, DefaultRegion1.order('sort_order ASC'), :default_classes, :name, :id, :name) %>
+      <%= f.grouped_collection_select(:class_id, @region1s_with_classes, :default_classes, :name, :id, :name) %>
     </div>
 
     <div class="field">

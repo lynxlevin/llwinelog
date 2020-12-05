@@ -1,6 +1,7 @@
 class WinelogsController < ApplicationController
   def new
     @winelog = Winelog.new
+    prepare_class_select
   end
 
   def create
@@ -33,4 +34,13 @@ class WinelogsController < ApplicationController
       :price, :shop, :rating_id, :comment, :alcohol, :importer_name
     ).merge(user_id: current_user.id)
   end
+
+  def prepare_class_select
+    class_ids = DefaultClass.all.ids
+    class_ids.each_with_index do |id, i|
+      class_ids[i] = id / 100 unless id == 1
+    end
+    @region1s_with_classes = DefaultRegion1.where(id: class_ids.uniq)
+  end
+
 end
