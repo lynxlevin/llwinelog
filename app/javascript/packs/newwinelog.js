@@ -4,50 +4,87 @@ window.addEventListener("load", () => {
   let region1Select = document.getElementById("winelog_region1_id");
   let classSelect = document.getElementById("winelog_class_id");
 
-  countrySelect.addEventListener("change", {selection: countrySelect, childSelection: region1Select, parentSelection: null, handleEvent: changeSelection});
-  region1Select.addEventListener("change", {selection: region1Select, childSelection: classSelect, parentSelection: countrySelect, handleEvent: changeSelection});
-  classSelect.addEventListener("change", {selection: classSelect, childSelection: null, parentSelection: region1Select, handleEvent: changeSelection});
-  classSelect.addEventListener("change", {selection: region1Select, childSelection: classSelect, parentSelection: countrySelect, handleEvent: changeSelection});
+  countrySelect.addEventListener("change", toggledCountry);
+  region1Select.addEventListener("change", toggledRegion1);
+  classSelect.addEventListener("change", toggledClass);
 
+  function toggledCountry() {
+    changeChild(countrySelect, region1Select);
+    changeClass();
+    region1Select.value = 1;
+    classSelect.value = 1;
+  }
+  function toggledRegion1() {
+    changeChild(region1Select, classSelect);
+    changeParent(region1Select, countrySelect);
+    classSelect.value = 1;
+  }
+  function toggledClass() {
+    changeParent(classSelect, region1Select);
+    changeParent(region1Select, countrySelect);
+  }
 
-  function changeSelection(e) {
-    if (this.childSelection != null) {
-      changeChild(this.selection, this.childSelection);
+  function changeSelect(e) {
+    if (this.childSelect != null) {
+      changeChild(this.Select, this.childSelect);
     }
-    if (this.parentSelection != null) {
-      changeParent(this.selection, this.parentSelection);
+    if (this.parentSelect != null) {
+      changeParent(this.Select, this.parentSelect);
     }
-
-    function changeChild(selection, childSelection) {
-      let selectedId = selection.value;
-      let selectedName = selection.selectedOptions[0].innerText;
-      let childArray = Array.from(childSelection.children);
-      childArray.forEach (option => {
-        if (option.label == selectedName || option.label == "--" || selectedId == 1) {
+  }
+  function changeChild(Select, childSelect) {
+    let selectedId = Select.value;
+    let selectedName = Select.selectedOptions[0].innerText;
+    let childArray = Array.from(childSelect.children);
+    childArray.forEach (option => {
+      if (option.label == selectedName || option.label == "--" || selectedId == 1) {
+        if (option.style.display == "none") {
+          Array.from(option.children).forEach(opt => {
+            opt.outerHTML = opt.innerHTML;
+          })
           option.style.display = "";
-        } else {
+        }
+      } else {
+        if (option.style.display != "none") {
+          Array.from(option.children).forEach(opt => {
+            opt.outerHTML = `<span style="display: none;">${opt.outerHTML}</span>`;
+          })
           option.style.display = "none";
         }
-      });
-      if (Math.floor(childSelection.value / 100) != selectedId) {
-        childSelection.value = 1;
       }
-    }
+    });
+  }
 
-    function changeParent(selection, parentSelection) {
-      let selectedId = selection.value;
-      if (selectedId != 1) {
-        parentSelection.value = Math.floor(selectedId / 100);
-      } else {
-        parentSelection.value = 1;
+  function changeParent(Select, parentSelect) {
+    let selectedId = Select.value;
+    if (selectedId != 1) {
+      parentSelect.value = Math.floor(selectedId / 100);
+    } else {
+      parentSelect.value = 1;
+    }
+    changeChild(parentSelect, Select);
+  }
+
+  function changeClass() {
+    let countryId = countrySelect.value;
+    let childArray = Array.from(classSelect.children);
+    childArray.forEach (option => {
+      if (option.style.display == "none") {
+        Array.from(option.children).forEach(opt => {
+          opt.outerHTML = opt.innerHTML;
+        })
+        option.style.display = "";
       }
-      changeChild(parentSelection, selection);
-    }
-
-    if (region1Select.value == 1) {
-      Array.from(classSelect.children).forEach (option => {
-          option.style.display = "";
-      });
+      if (Math.floor(option.children[0].value / 10000) != countryId && option.label != "--" && countryId != 1) {
+        if (option.style.display != "none") {
+          Array.from(option.children).forEach(opt => {
+            opt.outerHTML = `<span style="display: none;">${opt.outerHTML}</span>`;
+          })
+          option.style.display = "none";
+        }
+      }
+    });
+    if (Math.floor(classSelect.value / 10000) != countryId) {
       classSelect.value = 1;
     }
   }
