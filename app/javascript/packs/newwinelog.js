@@ -75,7 +75,8 @@ window.addEventListener("load", () => {
         })
         option.style.display = "";
       }
-      if (Math.floor(option.children[0].value / 10000) != countryId && option.label != "--" && countryId != 1) {
+      let num = option.children[0].value;
+      if (Math.floor(num / 10 ** (num.length - countryId.length)) != countryId && option.label != "--" && countryId != 1) {
         if (option.style.display != "none") {
           Array.from(option.children).forEach(opt => {
             opt.outerHTML = `<span style="display: none;">${opt.outerHTML}</span>`;
