@@ -1,1 +1,136 @@
-edit
+<%= javascript_pack_tag 'newwinelog' %>
+
+
+<%= form_with(model: @winelog, local: true)do |f| %>
+
+  <%# <%= render 'shared/error_messages', model: f.object %>
+
+  <%# <div class="img-upload"> %>
+    <%# 画像 %>
+    <%# <p>ファイルをアップロード</p> %>
+    <%# <%= f.file_field :image, id:"item-image" %>
+  <%# </div> %>
+  <%# <div id="image-list"></div> %>
+
+  <div class="field">
+    <%= label_tag :default_template %><br />
+    <%= f.collection_select(:default_template, DefaultTemplate.order('sort_order ASC'), :id, :template_name, {}, {}) %>
+  </div>
+
+  <div class="field">
+    <%= label_tag :original_template %><br />
+    <%= f.collection_select(:original_template, OriginalTemplate.order('sort_order ASC'), :id, :template_name, {}, {}) %>
+  </div>
+
+  <div class="field">
+    <%= f.label :wine_name %><br />
+    <%= f.text_field :wine_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :tasted_date %><br />
+    <%= f.date_field :tasted_date %>
+  </div>
+
+  <div class="field">
+    <%= f.label :type_id %><br />
+    <%= f.collection_select(:type_id, DefaultType.all, :id, :name) %>
+  </div>
+
+  <div class="field">
+    <%= f.label :country_id %><br />
+    <%= f.collection_select(:country_id, DefaultCountry.order('sort_order ASC'), :id, :name, {}, {}) %>
+  </div>
+
+  <div class="field">
+    <%= f.label :region1_id %><br />
+    <%= f.grouped_collection_select(:region1_id, DefaultCountry.order('sort_order ASC'), :default_region1s, :name, :id, :name) %>
+  </div>
+
+  <div class="field">
+    <%= f.label :region2 %><br />
+    <%= f.text_field :region2 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :region3 %><br />
+    <%= f.text_field :region3 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :producer %><br />
+    <%= f.text_field :producer %>
+  </div>
+
+  <div class="field">
+    <%= f.label :class_id %><br />
+    <%= f.grouped_collection_select(:class_id, @region1s_with_classes, :default_classes, :name, :id, :name) %>
+  </div>
+
+  <div class="field">
+    <%= f.label :vintage %><br />
+    <%= f.number_field(:vintage, in: 1800..2100, step: 1) %>
+  </div>
+
+  <div class="field">
+    <%= f.label :grape1 %><br />
+    <%= f.text_field :grape1 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :grape2 %><br />
+    <%= f.text_field :grape2 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :grape3 %><br />
+    <%= f.text_field :grape3 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :grape4 %><br />
+    <%= f.text_field :grape4 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :grape5 %><br />
+    <%= f.text_field :grape5 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :price %><br />
+    <%= f.number_field(:price, in: 0..10_000_000, step: 1) %>
+  </div>
+
+  <div class="field">
+    <%= f.label :shop %><br />
+    <%= f.text_field :shop %>
+  </div>
+
+  <div class="field">
+    <%= f.label :rating_id %><br />
+    <%= f.collection_select(:rating_id, DefaultRating.all, :id, :name) %>
+  </div>
+
+  <div class="field">
+    <%= f.label :comment %><br />
+    <%= f.text_area :comment, rows:"7" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :alcohol %><br />
+    <%= f.number_field(:alcohol, in: 0.0..20.0, step: 0.1) %>
+  </div>
+
+  <div class="field">
+    <%= f.label :importer_name %><br />
+    <%= f.text_field :importer_name %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Submit" %>
+  </div>
+
+  <%= link_to '削除', winelog_path, method: :delete %>
+
+<% end %>

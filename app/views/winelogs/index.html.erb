@@ -1,0 +1,4 @@
+<% @winelogs.each do |winelog| %>
+  <%= link_to "#{winelog.tasted_date}:  #{winelog.vintage}  #{winelog.wine_name}  #{winelog.producer}", edit_winelog_path(winelog.id) %>
+  <br />
+<% end %>

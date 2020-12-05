@@ -1,13 +1,22 @@
 class WinelogsController < ApplicationController
+  before_action :authenticate_user!
+  before_action :prepare_class_select, only: [:new, :edit]
+  before_action :find_winelog, only: [:show, :edit, :update, :destroy]
+  before_action :redirect_ileligible_user, only: [:destroy, :edit, :update, :show]
+
+  def index
+    @winelogs = Winelog.where(user_id: current_user).order('tasted_date DESC')
+    redirect_to root_path unless user_signed_in? && current_user.id == @winelogs[0].user_id
+  end
+
   def new
     @winelog = Winelog.new
-    prepare_class_select
   end
 
   def create
     @winelog = Winelog.new(winelog_params)
     if @winelog.save
-      redirect_to root_path
+      redirect_to winelogs_path
     else
       render :new
     end
@@ -20,6 +29,11 @@ class WinelogsController < ApplicationController
   end
 
   def update
+    if @winelog.update(winelog_params)
+      redirect_to winelogs_path
+    else
+      render :edit
+    end
   end
 
   def destroy
@@ -41,6 +55,14 @@ class WinelogsController < ApplicationController
       class_ids[i] = id / 100 unless id == 1
     end
     @region1s_with_classes = DefaultRegion1.where(id: class_ids.uniq)
+  end
+
+  def find_winelog
+    @winelog = Winelog.find(params[:id])
+  end
+
+  def redirect_ileligible_user
+    redirect_to root_path unless user_signed_in? && current_user.id == @winelog.user_id
   end
 
 end

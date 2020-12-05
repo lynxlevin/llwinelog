@@ -1,7 +1,9 @@
 <header>
   <div class="header-left">
+    <%= link_to "TOP", root_path, class:"header-content" %>
     <% if user_signed_in? %>
-      <%= link_to "記録する", new_winelog_path, class:"header-content" %>
+      <%= link_to "記録", new_winelog_path, class:"header-content" %>
+      <%= link_to "一覧", winelogs_path %>
     <% end %>
   </div>
   <div class="header-right">
