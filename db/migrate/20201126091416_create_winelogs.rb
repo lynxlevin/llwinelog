@@ -16,7 +16,7 @@ class CreateWinelogs < ActiveRecord::Migration[6.0]
       t.string :grape3
       t.string :grape4
       t.string :grape5
-      t.integer :price_range_id
+      t.integer :price
       t.string :shop
       t.integer :rating_id
       t.text :comment

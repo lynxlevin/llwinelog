@@ -1,0 +1,33 @@
+id,name,sort_order,default_region1_id
+1,--,1,1
+170201,Cru Beaujolais,170201,1702
+170202,Beaujolais Villages,170202,1702
+170203,Beaujolais Superieur,170203,1702
+170204,Beaujolais,170204,1702
+170301,Premier Grand Cru Classé(Médoc),170301,1703
+170302,Deuxième Grand Cru Classé(Médoc),170302,1703
+170303,Troisième Grand Cru Classé(Médoc),170303,1703
+170304,Quatrième Grand Cru Classé(Médoc),170304,1703
+170305,Cinquième Grand Cru Classé(Médoc),170305,1703
+170306,Cru Bourgeois Exceptionnel(Médoc),170306,1703
+170307,Cru Bourgeois Supèrieur(Médoc),170307,1703
+170308,Cru Bourgeois(Médoc),170308,1703
+170309,Cru Artisan(Médoc),170309,1703
+170310,Premier Supèrieur Cru(Sauternes),170310,1703
+170311,Troisième Cru(Sauternes),170311,1703
+170312,Second Cru(Sauternes),170312,1703
+170313,Grand Cru(Graves),170313,1703
+170314,Premier Grand Cru Classé A(Saint-Émilion),170314,1703
+170315,Premier Grand Cru Classé B(Saint-Émilion),170315,1703
+170316,Grand Cru Classé(Saint-Émilion),170316,1703
+170317,Grand Cru(Saint-Émilion),170317,1703
+170401,Grand Cru,170401,1704
+170402,Premier Cru,170402,1704
+170403,AOC Communal,170403,1704
+170404,AOC Bourgogne,170404,1704
+170501,Chablis Grand Cru,170501,1705
+170502,Chablis Premier Cru,170502,1705
+170503,Chablis,170503,1705
+170504,Petit Chablis,170504,1705
+170601,Grand Cru,170601,1706
+170602,Premier Cru,170602,1706

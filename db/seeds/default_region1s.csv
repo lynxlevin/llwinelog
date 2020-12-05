@@ -1,0 +1,242 @@
+id,name,sort_order,default_country_id
+1,--,1,1
+201,Alto Valle del Rio Colorado,201,2
+202,Alto Valle del Río Negro,202,2
+203,Cafayate,203,2
+204,El Arenal,204,2
+205,Este,205,2
+206,Famatina,206,2
+207,Fiambalá,207,2
+208,Luján oeste,208,2
+209,Luján/Maipú,209,2
+210,Maipú este,210,2
+211,Molinos,211,2
+212,Norte,212,2
+213,Pedernal,213,2
+214,Río Mendoza sur,214,2
+215,San Carlos,215,2
+216,San Patricio del Chañar,216,2
+217,San Rafael,217,2
+218,Tulum,218,2
+219,Valle de Uco centro,219,2
+220,Valle de Uco oeste,220,2
+221,Zonda,221,2
+401,New South Wales,401,4
+402,Queensland,402,4
+403,South Australia,403,4
+404,Tasmania,404,4
+405,Victoria,405,4
+406,Western Australia,406,4
+1101,Aconcagua Valley,1101,11
+1102,Bío Bío Valley,1102,11
+1103,Cachapoal Valley,1103,11
+1104,Casablanca Valley,1104,11
+1105,Choapa Valley,1105,11
+1106,Colchagua Valley,1106,11
+1107,Curicó Valley,1107,11
+1108,Elqui Valley,1108,11
+1109,Itata Valley,1109,11
+1110,Limarí Valley,1110,11
+1111,Maipo Valley,1111,11
+1112,Malleco Valley,1112,11
+1113,Maule Valley,1113,11
+1114,San Antonio Valley,1114,11
+1701,Alsace,1701,17
+1702,Beaujolais,1702,17
+1703,Bordeaux,1703,17
+1704,Bourgogne,1704,17
+1705,Chablis,1705,17
+1706,Champagne,1706,17
+1707,Corse,1707,17
+1708,Côtes du Rhône,1708,17
+1709,Jura-Savoie,1709,17
+1710,Langudoc-Roussillon,1710,17
+1711,Lorraine,1711,17
+1712,Provense,1712,17
+1713,Sud-Ouest,1713,17
+1714,Val de Loire,1714,17
+1901,Ahr,1901,19
+1902,Baden,1902,19
+1903,Franken,1903,19
+1904,Hessische Bergstraße,1904,19
+1905,Mittelrhein,1905,19
+1906,Mosel,1906,19
+1907,Nahe,1907,19
+1908,Pfalz,1908,19
+1909,Rheingau,1909,19
+1910,Rheinhessen,1910,19
+1911,Saale-Unstrut,1911,19
+1912,Sachsen,1912,19
+1913,Württemberg,1913,19
+2001,Amyndeon,2001,20
+2002,Anchialos,2002,20
+2003,Archanes,2003,20
+2004,Cephalonia,2004,20
+2005,Côtes de Meliton,2005,20
+2006,Goumenissa,2006,20
+2007,Limnos,2007,20
+2008,Mantinia,2008,20
+2009,Naoussa,2009,20
+2010,Nemea,2010,20
+2011,Paros,2011,20
+2012,Patras,2012,20
+2013,Peza,2013,20
+2014,Rapsani,2014,20
+2015,Rhodes,2015,20
+2016,Samos,2016,20
+2017,Santorini,2017,20
+2018,Sitia,2018,20
+2019,Zitsa,2019,20
+2401,Abruzzo,2413,24
+2402,Basilicata,2417,24
+2403,Calabria,2418,24
+2404,Campania,2415,24
+2405,Emilia Romagna,2408,24
+2406,Friuli-Venezia Giulia,2407,24
+2407,Lazio,2412,24
+2408,Liguria,2403,24
+2409,Lombardia,2404,24
+2410,Marche,2411,24
+2411,Molise,2414,24
+2412,Piemonte,2402,24
+2413,Puglia,2416,24
+2414,Sardegna,2420,24
+2415,Sicilia,2419,24
+2416,Toscana,2409,24
+2417,Trentino-Alto Adige,2405,24
+2418,Umbria,2410,24
+2419,Valle d' Aosta,2401,24
+2420,Veneto,2406,24
+3101,Auckland,3101,31
+3102,Canterbury/Waipara,3102,31
+3103,Central Otago,3103,31
+3104,Gisborne,3104,31
+3105,Hawkes Bay,3105,31
+3106,Marlborough,3106,31
+3107,Nelson,3107,31
+3108,Northland,3108,31
+3109,Waikato/Bay of Plenty,3109,31
+3110,Wairarapa,3110,31
+3401,Açores,3401,34
+3402,Alentejano,3402,34
+3403,Algarve,3403,34
+3404,Beira Atlântico,3404,34
+3405,"Duriense/Porto, Douro",3405,34
+3406,Lisboa,3406,34
+3407,Minho/Vinho Verde,3407,34
+3408,Península de Setúbal,3408,34
+3409,Tejo,3409,34
+3410,Terras da Beira,3410,34
+3411,Terras de Cister/Távora-Varosa,3411,34
+3412,Terras do Dão,3412,34
+3413,Terras Madeirenses,3413,34
+3414,Transmontano,3414,34
+4001,Breedekloof,4001,40
+4002,Calitsdorp,4002,40
+4003,Cape Agulhas,4003,40
+4004,Cape Peninsula,4004,40
+4005,Ceres Plateau,4005,40
+4006,Citrus dal Mountain,4006,40
+4007,Citrus dal Valley,4007,40
+4008,Darling,4008,40
+4009,Douglas,4009,40
+4010,Elgin,4010,40
+4011,Franshhoek,4011,40
+4012,Langeberg-Garcia,4012,40
+4013,Lutzville Valley,4013,40
+4014,Overberg,4014,40
+4015,Paarl,4015,40
+4016,Plettenberg Bay,4016,40
+4017,Robertson,4017,40
+4018,Stellenbosch,4018,40
+4019,Sutherland-Karoo,4019,40
+4020,Swartland,4020,40
+4021,Swellendam,4021,40
+4022,Tulbagh,4022,40
+4023,Tygerberg,4023,40
+4024,Walker Bay,4024,40
+4025,Wellington,4025,40
+4026,Worcester,4026,40
+4101,Andalucia,4101,41
+4102,Aragón,4102,41
+4103,Castilla La Mancha,4103,41
+4104,Castilla y León,4104,41
+4105,Cataluña,4105,41
+4106,Extremadura,4106,41
+4107,Galicia,4107,41
+4108,Islas Baleares,4108,41
+4109,Islas Canarias,4109,41
+4110,Madrid,4110,41
+4111,Murcia,4111,41
+4112,Navarra,4112,41
+4113,País Vasco,4113,41
+4114,Rioja,4114,41
+4115,Valencia,4115,41
+4501,Arizona,4501,45
+4502,California,4502,45
+4503,Colorado,4503,45
+4504,Georgia,4504,45
+4505,Idaho,4505,45
+4506,Maryland,4506,45
+4507,Michigan,4507,45
+4508,Missouri,4508,45
+4509,Nevada,4509,45
+4510,New Jersey,4510,45
+4511,New Mexico,4511,45
+4512,New York,4512,45
+4513,North Carolina,4513,45
+4514,Ohio,4514,45
+4515,Oklahoma,4515,45
+4516,Oregon,4516,45
+4517,Pennsylvania,4517,45
+4518,Texas,4518,45
+4519,Virginia,4519,45
+4520,Washington,4520,45
+4521,Wisconsin,4521,45
+4701,北海道,4701,47
+4702,青森県,4702,47
+4703,岩手県,4703,47
+4704,宮城県,4704,47
+4705,秋田県,4705,47
+4706,山形県,4706,47
+4707,福島県,4707,47
+4708,茨城県,4708,47
+4709,栃木県,4709,47
+4710,群馬県,4710,47
+4711,埼玉県,4711,47
+4712,千葉県,4712,47
+4713,東京都,4713,47
+4714,神奈川県,4714,47
+4715,新潟県,4715,47
+4716,富山県,4716,47
+4717,石川県,4717,47
+4718,福井県,4718,47
+4719,山梨県,4719,47
+4720,長野県,4720,47
+4721,岐阜県,4721,47
+4722,静岡県,4722,47
+4723,愛知県,4723,47
+4724,三重県,4724,47
+4725,滋賀県,4725,47
+4726,京都府,4726,47
+4727,大阪府,4727,47
+4728,兵庫県,4728,47
+4729,奈良県,4729,47
+4730,和歌山県,4730,47
+4731,鳥取県,4731,47
+4732,島根県,4732,47
+4733,岡山県,4733,47
+4734,広島県,4734,47
+4735,山口県,4735,47
+4736,徳島県,4736,47
+4737,香川県,4737,47
+4738,愛媛県,4738,47
+4739,高知県,4739,47
+4740,福岡県,4740,47
+4741,佐賀県,4741,47
+4742,長崎県,4742,47
+4743,熊本県,4743,47
+4744,大分県,4744,47
+4745,宮崎県,4745,47
+4746,鹿児島県,4746,47
+4747,沖縄県,4747,47
