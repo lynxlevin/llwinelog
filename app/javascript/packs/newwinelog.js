@@ -37,14 +37,13 @@ window.addEventListener("load", () => {
     let selectedName = Select.selectedOptions[0].innerText;
     let childArray = Array.from(childSelect.children);
     childArray.forEach (option => {
-      if (option.label == selectedName || option.label == "--" || selectedId == 1) {
-        if (option.style.display == "none") {
-          Array.from(option.children).forEach(opt => {
-            opt.outerHTML = opt.innerHTML;
-          })
-          option.style.display = "";
-        }
-      } else {
+      if (option.style.display == "none") {
+        Array.from(option.children).forEach(opt => {
+          opt.outerHTML = opt.innerHTML;
+        })
+        option.style.display = "";
+      }
+      if (option.label != selectedName && option.label != "--" && selectedId != 1) {
         if (option.style.display != "none") {
           Array.from(option.children).forEach(opt => {
             opt.outerHTML = `<span style="display: none;">${opt.outerHTML}</span>`;
