@@ -4,24 +4,44 @@ window.addEventListener("load", () => {
   let region1Select = document.getElementById("winelog_region1_id");
   let classSelect = document.getElementById("winelog_class_id");
 
-  countrySelect.addEventListener("change", {selection: countrySelect, targetSelection: region1Select, handleEvent: changeSelection});
-  region1Select.addEventListener("change", {selection: region1Select, targetSelection: classSelect, handleEvent: changeSelection});
+  countrySelect.addEventListener("change", {selection: countrySelect, childSelection: region1Select, parentSelection: null, handleEvent: changeSelection});
+  region1Select.addEventListener("change", {selection: region1Select, childSelection: classSelect, parentSelection: countrySelect, handleEvent: changeSelection});
+  classSelect.addEventListener("change", {selection: classSelect, childSelection: null, parentSelection: region1Select, handleEvent: changeSelection});
 
   function changeSelection(e) {
-    let selectedId = this.selection.value;
-    let selectedName = this.selection.selectedOptions[0].innerText;
-
-    let targetArray = Array.from(this.targetSelection.children);
-    targetArray.forEach (option => {
-      if (option.label == selectedName || option.label == "--" || selectedId == 1) {
-        option.style.display = "";
-      } else {
-        option.style.display = "none";
-      }
-    });
-    if (Math.floor(this.targetSelection.value / 100) != selectedId) {
-      this.targetSelection.value = 1;
+    if (this.childSelection != null) {
+      changeChild(this.selection, this.childSelection);
     }
+    if (this.parentSelection != null) {
+      changeParent(this.selection, this.parentSelection);
+    }
+
+    function changeChild(selection, childSelection) {
+      let selectedId = selection.value;
+      let selectedName = selection.selectedOptions[0].innerText;
+      let childArray = Array.from(childSelection.children);
+      childArray.forEach (option => {
+        if (option.label == selectedName || option.label == "--" || selectedId == 1) {
+          option.style.display = "";
+        } else {
+          option.style.display = "none";
+        }
+      });
+      if (Math.floor(childSelection.value / 100) != selectedId) {
+        childSelection.value = 1;
+      }
+    }
+
+    function changeParent(selection, parentSelection) {
+      let selectedId = selection.value;
+      if (selectedId != 1) {
+        parentSelection.value = Math.floor(selectedId / 100);
+      } else {
+        parentSelection.value = 1;
+      }
+      changeChild(parentSelection, selection);
+    }
+
     if (region1Select.value == 1) {
       Array.from(classSelect.children).forEach (option => {
           option.style.display = "";
@@ -29,18 +49,6 @@ window.addEventListener("load", () => {
       classSelect.value = 1;
     }
   }
-
-  // function changeClass() {
-  //   let selectedRegion1Id = region1Select.value;
-  //   let selectedRegion1Name;
-  //   Array.from(region1Select.children).forEach()
-  // }
-
-
-
-
-
-
 
 })
 
