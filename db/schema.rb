@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_29_025544) do
+ActiveRecord::Schema.define(version: 2020_12_05_044647) do
 
   create_table "default_classes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -75,6 +75,32 @@ ActiveRecord::Schema.define(version: 2020_11_29_025544) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "original_templates", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "template_name", null: false
+    t.integer "sort_order"
+    t.integer "type_id_value"
+    t.integer "country_id_value"
+    t.integer "region1_id_value"
+    t.string "region2_value"
+    t.string "region3_value"
+    t.string "producer_value"
+    t.integer "class_id_value"
+    t.integer "vintage_value"
+    t.string "grape1_value"
+    t.string "grape2_value"
+    t.string "grape3_value"
+    t.string "grape4_value"
+    t.string "grape5_value"
+    t.string "shop_value"
+    t.text "comment_value"
+    t.integer "alcohol_value"
+    t.string "importer_name_value"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_original_templates_on_user_id"
+  end
+
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "username", null: false
     t.string "email", default: "", null: false
@@ -118,5 +144,6 @@ ActiveRecord::Schema.define(version: 2020_11_29_025544) do
 
   add_foreign_key "default_classes", "default_region1s"
   add_foreign_key "default_region1s", "default_countries"
+  add_foreign_key "original_templates", "users"
   add_foreign_key "winelogs", "users"
 end

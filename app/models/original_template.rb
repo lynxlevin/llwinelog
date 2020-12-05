@@ -1,0 +1,2 @@
+class OriginalTemplate < ApplicationRecord
+end
