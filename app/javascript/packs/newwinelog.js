@@ -7,6 +7,8 @@ window.addEventListener("load", () => {
   countrySelect.addEventListener("change", {selection: countrySelect, childSelection: region1Select, parentSelection: null, handleEvent: changeSelection});
   region1Select.addEventListener("change", {selection: region1Select, childSelection: classSelect, parentSelection: countrySelect, handleEvent: changeSelection});
   classSelect.addEventListener("change", {selection: classSelect, childSelection: null, parentSelection: region1Select, handleEvent: changeSelection});
+  classSelect.addEventListener("change", {selection: region1Select, childSelection: classSelect, parentSelection: countrySelect, handleEvent: changeSelection});
+
 
   function changeSelection(e) {
     if (this.childSelection != null) {
