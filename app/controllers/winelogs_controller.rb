@@ -1,6 +1,6 @@
 class WinelogsController < ApplicationController
   before_action :authenticate_user!
-  before_action :prepare_class_select, only: [:new, :edit]
+  before_action :prepare_class_select, only: [:new, :edit, :save, :update]
   before_action :find_winelog, only: [:show, :edit, :update, :destroy]
   before_action :redirect_ileligible_user, only: [:destroy, :edit, :update, :show]
 
