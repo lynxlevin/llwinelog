@@ -6,7 +6,6 @@ class WinelogsController < ApplicationController
 
   def index
     @winelogs = Winelog.where(user_id: current_user).order('tasted_date DESC')
-    redirect_to root_path unless user_signed_in? && current_user.id == @winelogs[0].user_id
   end
 
   def new
