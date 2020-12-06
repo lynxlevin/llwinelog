@@ -1,6 +1,6 @@
 class WinelogsController < ApplicationController
   before_action :authenticate_user!
-  before_action :prepare_class_select, only: [:new, :edit, :save, :update]
+  before_action :prepare_class_select, only: [:new, :edit, :create, :update]
   before_action :find_winelog, only: [:show, :edit, :update, :destroy]
   before_action :redirect_ileligible_user, only: [:destroy, :edit, :update, :show]
 
@@ -15,7 +15,6 @@ class WinelogsController < ApplicationController
 
   def create
     @winelog = Winelog.new(winelog_params)
-    binding.pry
     if @winelog.save
       redirect_to winelogs_path
     else
@@ -38,6 +37,12 @@ class WinelogsController < ApplicationController
   end
 
   def destroy
+    if user_signed_in? && current_user.id == @winelog.user_id
+      @winelog.destroy
+      redirect_to winelogs_path
+    else
+      render :edit
+    end
   end
 
   private
