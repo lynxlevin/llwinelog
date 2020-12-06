@@ -15,6 +15,7 @@ class WinelogsController < ApplicationController
 
   def create
     @winelog = Winelog.new(winelog_params)
+    binding.pry
     if @winelog.save
       redirect_to winelogs_path
     else

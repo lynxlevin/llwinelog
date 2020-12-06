@@ -2,7 +2,7 @@ class Winelog < ApplicationRecord
   belongs_to :user
 
   validates :wine_name, presence: true
-  with_options numericality: { greater_than: 0,
+  with_options numericality: { greater_than: -1,
                                less_than: 1_000_000,
                                only_integer: true },
                length: { maximum: 7 } do
