@@ -1,27 +1,22 @@
 window.addEventListener("load", () => {
+  // イベントリスナの設定
   let countrySelect = document.getElementById("winelog_country_id");
   let region1Select = document.getElementById("winelog_region1_id");
   let classSelect = document.getElementById("winelog_class_id");
-
   countrySelect.addEventListener("change", toggledCountry);
   region1Select.addEventListener("change", toggledRegion1);
   classSelect.addEventListener("change", toggledClass);
 
-  let nullOption = `<optgroup label="--"><option value="1">--</option></optgroup>`;
-
+  // region1の初期値を保存
   let wholeRegion1HTML = region1Select.innerHTML;
   let region1Optgroups = new Object();
   let wholeRegion1Optgroups = region1Select.getElementsByTagName("OPTGROUP");
   prepareOptgroups(region1Optgroups, wholeRegion1Optgroups);
-
+  // classの初期値を保存
   let wholeClassHTML = classSelect.innerHTML;
   let classOptgroups = new Object();
   let wholeClassOptgroups = classSelect.getElementsByTagName("OPTGROUP");
   prepareOptgroups(classOptgroups, wholeClassOptgroups);
-
-  setRegion1Options();
-  setClassOptions();
-
   function prepareOptgroups(optgroups, wholeOptgroups) {
     for (var i = 0; i < wholeOptgroups.length; i++) {
       var label = wholeOptgroups.item(i).label;
@@ -29,30 +24,37 @@ window.addEventListener("load", () => {
     }
   }
 
+  // edit画面表示時の動作 ※サーバーサイドでする方がいいか?
+  setRegion1Options();
+  setClassOptions();
+
   function toggledCountry() {
+    // region1を変更
     setRegion1Options();
     region1Select.value = 1;
-
+    // classを変更
     setClassOptions();
     classSelect.value = 1;
   }
   function toggledRegion1() {
+    // countryを変更
     changeParent(region1Select, countrySelect);
-
+    // region1を変更
     let region1Value = region1Select.value;
     setRegion1Options();
     region1Select.value = region1Value;
-
+    // classを変更
     setClassOptions();
     classSelect.value = 1;
   }
   function toggledClass() {
+    // countryを変更
     changeParent(classSelect, region1Select);
     changeParent(region1Select, countrySelect);
-
+    // region1を変更
     setRegion1Options();
     changeParent(classSelect, region1Select);
-
+    // classを変更
     let classValue = classSelect.value;
     setClassOptions();
     classSelect.value = classValue;
@@ -64,9 +66,8 @@ window.addEventListener("load", () => {
     if (countryCode == "--") { // リセットした時
       region1Select.innerHTML = wholeRegion1HTML;
     } else { // countryを選んだ時 ＆ region1を選んだ時 ＆ classを選んだ時
-      let region1Optgroup = region1Optgroups[countryCode];
-      region1Select.insertAdjacentHTML("afterbegin", nullOption);
-      region1Select.appendChild(region1Optgroup);
+      region1Select.appendChild(region1Optgroups["--"]);
+      region1Select.appendChild(region1Optgroups[countryCode]);
     }
   }
   function setClassOptions() {
@@ -93,7 +94,7 @@ window.addEventListener("load", () => {
         fillClassSelect(text)
       })
     } else { // つまり(countryCode != "--" && region1Code != "--") region1を選んだ時＆classを選んだ時
-      classSelect.insertAdjacentHTML("afterbegin", nullOption);
+      classSelect.appendChild(classOptgroups["--"]);
       fillClassSelect(region1Code);
     }
   }
