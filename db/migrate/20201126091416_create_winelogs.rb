@@ -20,7 +20,7 @@ class CreateWinelogs < ActiveRecord::Migration[6.0]
       t.string :shop
       t.integer :rating_id
       t.text :comment
-      t.integer :alcohol
+      t.float :alcohol
       t.string :importer_name
       t.references :user, null: false, foreign_key: true
       t.timestamps

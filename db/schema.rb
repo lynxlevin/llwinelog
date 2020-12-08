@@ -134,7 +134,7 @@ ActiveRecord::Schema.define(version: 2020_12_05_044647) do
     t.string "shop"
     t.integer "rating_id"
     t.text "comment"
-    t.integer "alcohol"
+    t.float "alcohol"
     t.string "importer_name"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
