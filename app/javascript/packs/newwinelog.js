@@ -1,3 +1,6 @@
+// 課題
+// innerHTMLやappendChildのエスケープが必要か？ドロップダウンでどこまでCSFRできるのか?
+
 window.addEventListener("load", () => {
   // イベントリスナの設定
   let countrySelect = document.getElementById("winelog_country_id");
