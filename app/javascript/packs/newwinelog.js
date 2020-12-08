@@ -12,27 +12,28 @@ window.addEventListener("load", () => {
   let wholeRegion1HTML = region1Select.innerHTML;
   let region1Optgroups = new Object();
   let wholeRegion1Optgroups = region1Select.getElementsByTagName("OPTGROUP");
-  for (var i = 0; i < wholeRegion1Optgroups.length; i++) {
-    var label = wholeRegion1Optgroups.item(i).label;
-    region1Optgroups[label] = wholeRegion1Optgroups.item(i).cloneNode(true);
-  }
+  prepareOptgroups(region1Optgroups, wholeRegion1Optgroups);
 
   let wholeClassHTML = classSelect.innerHTML;
   let classOptgroups = new Object();
   let wholeClassOptgroups = classSelect.getElementsByTagName("OPTGROUP");
-  for (var i = 0; i < wholeClassOptgroups.length; i++) {
-    var label = wholeClassOptgroups.item(i).label;
-    classOptgroups[label] = wholeClassOptgroups.item(i).cloneNode(true);
-  }
+  prepareOptgroups(classOptgroups, wholeClassOptgroups);
 
   setRegion1Options();
-  setClassOptionsToRegion1Value();
+  setClassOptions();
+
+  function prepareOptgroups(optgroups, wholeOptgroups) {
+    for (var i = 0; i < wholeOptgroups.length; i++) {
+      var label = wholeOptgroups.item(i).label;
+      optgroups[label] = wholeOptgroups.item(i).cloneNode(true);
+    }
+  }
 
   function toggledCountry() {
     setRegion1Options();
     region1Select.value = 1;
 
-    setClassOptionsToRegion1Options();
+    setClassOptions();
     classSelect.value = 1;
   }
   function toggledRegion1() {
@@ -42,7 +43,7 @@ window.addEventListener("load", () => {
     setRegion1Options();
     region1Select.value = region1Value;
 
-    setClassOptionsToRegion1Value();
+    setClassOptions();
     classSelect.value = 1;
   }
   function toggledClass() {
@@ -53,36 +54,49 @@ window.addEventListener("load", () => {
     changeParent(classSelect, region1Select);
 
     let classValue = classSelect.value;
-    setClassOptionsToRegion1Value();
+    setClassOptions();
     classSelect.value = classValue;
   }
 
   function setRegion1Options() {
     let countryCode = countrySelect.selectedOptions[0].innerText;
     region1Select.innerHTML = "";
-    if (countryCode == "--") {
+    if (countryCode == "--") { // リセットした時
       region1Select.innerHTML = wholeRegion1HTML;
-      return null;
+    } else { // countryを選んだ時 ＆ region1を選んだ時 ＆ classを選んだ時
+      let region1Optgroup = region1Optgroups[countryCode];
+      region1Select.insertAdjacentHTML("afterbegin", nullOption);
+      region1Select.appendChild(region1Optgroup);
     }
-    let region1Optgroup = region1Optgroups[countryCode];
-    region1Select.insertAdjacentHTML("afterbegin", nullOption);
-    region1Select.appendChild(region1Optgroup);
   }
-
-  function setClassOptionsToRegion1Value() {
+  function setClassOptions() {
+    let countryCode = countrySelect.selectedOptions[0].innerText;
     let region1Code = region1Select.selectedOptions[0].innerText;
     classSelect.innerHTML = "";
-    if (region1Code == "--") {
-      classSelect.innerHTML = wholeClassHTML;
-      return null;
+    function fillClassSelect(text) {
+      let classOptgroup = classOptgroups[text];
+      if (classOptgroup != null) {
+        classSelect.appendChild(classOptgroup);
+      }
     }
-    classSelect.insertAdjacentHTML("afterbegin", nullOption);
-    if (classOptgroups[region1Code] != null) {
-      let classOptgroup = classOptgroups[region1Code];
-      classSelect.appendChild(classOptgroup);
+
+    if  (countryCode == "--" && region1Code == "--") { // リセットした時
+      classSelect.innerHTML = wholeClassHTML;
+    } else if (countryCode != "--" && region1Code == "--") { // countryを選んだ時
+      let presentRegion1Options = region1Select.getElementsByTagName("OPTION");
+      let region1Texts = [];
+      for (var i = 0; i < presentRegion1Options.length; i++) {
+        var text = presentRegion1Options.item(i).innerText;
+        region1Texts.push(text);
+      }
+      region1Texts.forEach (text => {
+        fillClassSelect(text)
+      })
+    } else { // つまり(countryCode != "--" && region1Code != "--") region1を選んだ時＆classを選んだ時
+      classSelect.insertAdjacentHTML("afterbegin", nullOption);
+      fillClassSelect(region1Code);
     }
   }
-
   function changeParent(Select, parentSelect) {
     let selectedId = Select.value;
     if (selectedId != 1) {
@@ -91,27 +105,7 @@ window.addEventListener("load", () => {
       parentSelect.value = 1;
     }
   }
-
-  function setClassOptionsToRegion1Options() {
-    let presentRegion1Options = region1Select.getElementsByTagName("OPTION");
-    let region1Texts = [];
-    for (var i = 0; i < presentRegion1Options.length; i++) {
-      var text = presentRegion1Options.item(i).innerText;
-      region1Texts.push(text);
-    }
-
-    classSelect.innerHTML = "";
-    region1Texts.forEach (text => {
-      if (classOptgroups[text] != null) {
-      let classOptgroup = classOptgroups[text];
-      classSelect.appendChild(classOptgroup);
-      }
-    })
-  }
 })
-
-
-
 
 // import Vue from 'vue/dist/vue.esm'
 // // import App from '../app.vue'
