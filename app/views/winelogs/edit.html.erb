@@ -13,11 +13,6 @@
   <%# <div id="image-list"></div> %>
 
   <div class="field">
-    <%= label_tag :default_template %><br />
-    <%= f.collection_select(:default_template, DefaultTemplate.order('sort_order ASC'), :id, :template_name, {}, {}) %>
-  </div>
-
-  <div class="field">
     <%= label_tag :original_template %><br />
     <%= f.collection_select(:original_template, OriginalTemplate.order('sort_order ASC'), :id, :template_name, {}, {}) %>
   </div>

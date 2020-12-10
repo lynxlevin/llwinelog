@@ -14,7 +14,7 @@
 
     <div class="field">
       <%= label_tag :original_template %><br />
-      <%= f.collection_select(:original_template, OriginalTemplate.order('sort_order ASC'), :id, :template_name, {}, { "v-model": "original_template_value" }) %>
+      <%= f.collection_select(:original_template, @original_templates, :id, :template_name, {}, { "v-model": "original_template_value" }) %>
     </div>
 
     <div class="field">

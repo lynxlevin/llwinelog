@@ -15,7 +15,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
     require "csv"
     CSV.foreach('db/seeds/original_templates.csv', headers: true) do |row|
       OriginalTemplate.create(
-        id: row['id'],
         template_name: row['template_name'],
         sort_order: row['sort_order'],
         type_id_value: row['type_id_value'],
