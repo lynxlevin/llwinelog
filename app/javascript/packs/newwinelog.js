@@ -1,5 +1,5 @@
 // 課題
-// innerHTMLやappendChildのエスケープが必要か？ドロップダウンでどこまでCSFRできるのか?
+// innerHTMLやappendChildのエスケープが必要か？ドロップダウンでどこまでCSRFできるのか?
 
 window.addEventListener("load", () => {
   // イベントリスナの設定
@@ -63,7 +63,7 @@ window.addEventListener("load", () => {
     classSelect.value = classValue;
   }
 
-  function setRegion1Options() {
+  function setRegion1Options() { // http://titi-fe.hatenablog.com/entry/2016/02/15/124745
     let countryCode = countrySelect.selectedOptions[0].innerText;
     region1Select.innerHTML = "";
     if (countryCode == "--") { // リセットした時
