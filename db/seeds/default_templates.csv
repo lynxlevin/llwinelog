@@ -1,7 +1,0 @@
-id,template_name,sort_order,type_id_value,country_id_value,region1_id_value,region2_value,region3_value,producer_value,class_id_value,vintage_value,grape1_value,grape2_value,grape3_value,grape4_value,grape5_value,shop_value,comment_value,alcohol_value,importer_name_value
-1,--,1,,,,,,,,,,,,,,,,,
-2,Bourgogne Red,2,2,17,1704,,,,,,Pinot Noir,,,,,,,,
-3,Gevrey Chambertin,3,2,17,1704,Côte de Nuits,Gevrey Chambertin,,,,Pinot Noir,,,,,,,,
-4,Bourgogne White,4,3,17,1704,,,,,,Chardonnay,,,,,,,,
-5,Bordeaux Left Bank,5,2,17,1703,Médoc,,,,,Cabernet Sauvignon,Merlot,Cabernet Franc,Malbec,Petit Verdot,,,,
-6,Bordeaux Right Bank,6,2,17,1703,Saint-Émilion,,,,,Merlot,Cabernet Franc,,,,,,,
