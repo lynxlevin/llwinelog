@@ -10,6 +10,8 @@ class WinelogsController < ApplicationController
 
   def new
     @winelog = Winelog.new
+    gon.default_templates = DefaultTemplate.all
+    gon.original_templates = OriginalTemplate.where(user_id: current_user.id)
   end
 
   def create
