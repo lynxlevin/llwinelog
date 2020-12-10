@@ -110,30 +110,3 @@ window.addEventListener("load", () => {
     }
   }
 })
-
-import Vue from 'vue/dist/vue.esm'
-// import App from '../app.vue'
-
-// Vue.use(TurbolinksAdapter)
-
-window.addEventListener('load', () => {
-  const winelog = new Vue({
-    el: '#winelog',
-    data: {
-      default_template_value: 1
-    },
-    computed: {
-      default_templates: function() {
-        let newobject = new Object();
-        gon.default_templates.forEach (template => {
-          newobject[template.id] = template;
-        })
-        return newobject;
-      },
-      default_template: function() {
-        return this.default_templates[this.default_template_value]
-      }
-    }
-    // components: { App }
-  })
-})
