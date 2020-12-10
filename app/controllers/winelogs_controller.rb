@@ -19,6 +19,9 @@ class WinelogsController < ApplicationController
     if @winelog.save
       redirect_to winelogs_path
     else
+      binding.pry
+      @original_templates = OriginalTemplate.where(user_id: current_user.id).or(OriginalTemplate.where(id: 1)).order('sort_order ASC')
+      gon.original_templates = @original_templates
       render :new
     end
   end
