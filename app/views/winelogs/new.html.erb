@@ -13,14 +13,9 @@
     <%# <div id="image-list"></div> %>
 
     <div class="field">
-      <%= label_tag :default_template %><br />
-      <%= f.collection_select(:default_template, DefaultTemplate.order('sort_order ASC'), :id, :template_name, {}, { "v-model": "default_template_value" }) %>
+      <%= label_tag :original_template %><br />
+      <%= f.collection_select(:original_template, OriginalTemplate.order('sort_order ASC'), :id, :template_name, {}, { "v-model": "original_template_value" }) %>
     </div>
-
-    <%# <div class="field"> %>
-      <%# <%= label_tag :original_template %><br />
-      <%# <%= f.collection_select(:original_template, OriginalTemplate.order('sort_order ASC'), :id, :template_name, {}, { "v-model": "original_template_value" }) %>
-    <%# </div> %>
 
     <div class="field">
       <%= f.label :wine_name %><br />
@@ -34,67 +29,67 @@
 
     <div class="field">
       <%= f.label :type_id %><br />
-      <%= f.collection_select(:type_id, DefaultType.all, :id, :name, {}, {":value": "default_template.type_id_value"}) %>
+      <%= f.collection_select(:type_id, DefaultType.all, :id, :name, {}, {":value": "original_template.type_id_value"}) %>
     </div>
 
     <div class="field">
       <%= f.label :country_id %><br />
-      <%= f.collection_select(:country_id, DefaultCountry.order('sort_order ASC'), :id, :name, {}, {":value": "default_template.country_id_value"}) %>
+      <%= f.collection_select(:country_id, DefaultCountry.order('sort_order ASC'), :id, :name, {}, {":value": "original_template.country_id_value"}) %>
     </div>
 
     <div class="field">
       <%= f.label :region1_id %><br />
-      <%= f.grouped_collection_select(:region1_id, DefaultCountry.order('sort_order ASC'), :default_region1s, :name, :id, :name, {}, {":value": "default_template.region1_id_value"}) %>
+      <%= f.grouped_collection_select(:region1_id, DefaultCountry.order('sort_order ASC'), :default_region1s, :name, :id, :name, {}, {":value": "original_template.region1_id_value"}) %>
     </div>
 
     <div class="field">
       <%= f.label :region2 %><br />
-      <%= f.text_field :region2, ":value": "default_template.region2_value" %>
+      <%= f.text_field :region2, ":value": "original_template.region2_value" %>
     </div>
 
     <div class="field">
       <%= f.label :region3 %><br />
-      <%= f.text_field :region3, ":value": "default_template.region3_value" %>
+      <%= f.text_field :region3, ":value": "original_template.region3_value" %>
     </div>
 
     <div class="field">
       <%= f.label :producer %><br />
-      <%= f.text_field :producer, ":value": "default_template.producer_value" %>
+      <%= f.text_field :producer, ":value": "original_template.producer_value" %>
     </div>
 
     <div class="field">
       <%= f.label :class_id %><br />
-      <%= f.grouped_collection_select(:class_id, @region1s_with_classes, :default_classes, :name, :id, :name, {}, {":value": "default_template.class_id_value"}) %>
+      <%= f.grouped_collection_select(:class_id, @region1s_with_classes, :default_classes, :name, :id, :name, {}, {":value": "original_template.class_id_value"}) %>
     </div>
 
     <div class="field">
       <%= f.label :vintage %><br />
-      <%= f.number_field(:vintage, in: 1800..2100, step: 1, value: 2000, ":value": "default_template.vintage_value") %>
+      <%= f.number_field(:vintage, in: 1800..2100, step: 1, value: 2000, ":value": "original_template.vintage_value") %>
     </div>
 
     <div class="field">
       <%= f.label :grape1 %><br />
-      <%= f.text_field :grape1, ":value": "default_template.grape1_value" %>
+      <%= f.text_field :grape1, ":value": "original_template.grape1_value" %>
     </div>
 
     <div class="field">
       <%= f.label :grape2 %><br />
-      <%= f.text_field :grape2, ":value": "default_template.grape2_value" %>
+      <%= f.text_field :grape2, ":value": "original_template.grape2_value" %>
     </div>
 
     <div class="field">
       <%= f.label :grape3 %><br />
-      <%= f.text_field :grape3, ":value": "default_template.grape3_value" %>
+      <%= f.text_field :grape3, ":value": "original_template.grape3_value" %>
     </div>
 
     <div class="field">
       <%= f.label :grape4 %><br />
-      <%= f.text_field :grape4, ":value": "default_template.grape4_value" %>
+      <%= f.text_field :grape4, ":value": "original_template.grape4_value" %>
     </div>
 
     <div class="field">
       <%= f.label :grape5 %><br />
-      <%= f.text_field :grape5, ":value": "default_template.grape5_value" %>
+      <%= f.text_field :grape5, ":value": "original_template.grape5_value" %>
     </div>
 
     <div class="field">
@@ -104,7 +99,7 @@
 
     <div class="field">
       <%= f.label :shop %><br />
-      <%= f.text_field :shop, ":value": "default_template.shop_value" %>
+      <%= f.text_field :shop, ":value": "original_template.shop_value" %>
     </div>
 
     <div class="field">
@@ -114,17 +109,17 @@
 
     <div class="field">
       <%= f.label :comment %><br />
-      <%= f.text_area :comment, rows:"7", ":value": "default_template.comment_value" %>
+      <%= f.text_area :comment, rows:"7", ":value": "original_template.comment_value" %>
     </div>
 
     <div class="field">
       <%= f.label :alcohol %><br />
-      <%= f.number_field(:alcohol, in: 0.0..20.0, step: 0.1, value:13.0, ":value": "default_template.alcohol_value") %>
+      <%= f.number_field(:alcohol, in: 0.0..20.0, step: 0.1, value:13.0, ":value": "original_template.alcohol_value") %>
     </div>
 
     <div class="field">
       <%= f.label :importer_name %><br />
-      <%= f.text_field :importer_name, ":value": "default_template.importer_name_value" %>
+      <%= f.text_field :importer_name, ":value": "original_template.importer_name_value" %>
     </div>
 
     <div class="actions">

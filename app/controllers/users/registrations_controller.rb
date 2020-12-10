@@ -13,7 +13,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def create
     super
     require "csv"
-    CSV.foreach('db/seeds/default_templates.csv', headers: true) do |row|
+    CSV.foreach('db/seeds/original_templates.csv', headers: true) do |row|
       OriginalTemplate.create(
         id: row['id'],
         template_name: row['template_name'],
