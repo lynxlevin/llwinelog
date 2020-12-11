@@ -16,6 +16,7 @@ select.input-field {
 
 textarea.input-field {
   height: 45vh;
+  font-size: 16px;
 }
 
 .inline-label {
