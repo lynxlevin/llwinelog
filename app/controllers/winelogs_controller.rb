@@ -55,7 +55,7 @@ class WinelogsController < ApplicationController
       :wine_name, :tasted_date, :type_id, :country_id,
       :region1_id, :region2, :region3, :producer, :class_id,
       :vintage, :grape1, :grape2, :grape3, :grape4, :grape5,
-      :price, :shop, :rating_id, :comment, :alcohol, :importer_name
+      :price, :shop, :rating_id, :comment, :alcohol, :importer
     ).merge(user_id: current_user.id)
   end
 

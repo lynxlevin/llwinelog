@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_05_044647) do
+ActiveRecord::Schema.define(version: 2020_12_11_010657) do
 
   create_table "default_classes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -70,7 +70,7 @@ ActiveRecord::Schema.define(version: 2020_12_05_044647) do
     t.string "shop_value"
     t.text "comment_value"
     t.integer "alcohol_value"
-    t.string "importer_name_value"
+    t.string "importer_value"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -111,7 +111,7 @@ ActiveRecord::Schema.define(version: 2020_12_05_044647) do
     t.integer "rating_id"
     t.text "comment"
     t.float "alcohol"
-    t.string "importer_name"
+    t.string "importer"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
