@@ -11,6 +11,7 @@
 
 select.input-field {
   font-size: 17px;
+  width: 99%;
 }
 
 textarea.input-field {
