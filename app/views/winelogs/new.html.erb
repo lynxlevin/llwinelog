@@ -14,6 +14,11 @@
     <%# <div id="image-list"></div> %>
 
     <div class="field">
+      <%= f.label :tasted_date %><br />
+      <%= f.date_field :tasted_date, value: Date.today %>
+    </div>
+
+    <div class="field">
       <%= label_tag :original_template %><br />
       <%= f.collection_select(:original_template, @original_templates, :id, :template_name, {}, { "v-model": "original_template_value" }) %>
     </div>
@@ -24,8 +29,8 @@
     </div>
 
     <div class="field">
-      <%= f.label :tasted_date %><br />
-      <%= f.date_field :tasted_date, value: Date.today %>
+      <%= f.label :producer %><br />
+      <%= f.text_field :producer, ":value": "original_template.producer_value" %>
     </div>
 
     <div class="field">
@@ -54,11 +59,6 @@
     </div>
 
     <div class="field">
-      <%= f.label :producer %><br />
-      <%= f.text_field :producer, ":value": "original_template.producer_value" %>
-    </div>
-
-    <div class="field">
       <%= f.label :class_id %><br />
       <%= f.grouped_collection_select(:class_id, @region1s_with_classes, :default_classes, :name, :id, :name, {}, {":value": "original_template.class_id_value"}) %>
     </div>
@@ -66,6 +66,21 @@
     <div class="field">
       <%= f.label :vintage %><br />
       <%= f.number_field(:vintage, in: 1800..2100, step: 1, ":value": "original_template.vintage_value") %>
+    </div>
+
+    <div class="field">
+      <%= f.label :price %><br />
+      <%= f.number_field(:price, in: 0..10_000_000, step: 1, value: 0) %>
+    </div>
+
+    <div class="field">
+      <%= f.label :rating_id %><br />
+      <%= f.collection_select(:rating_id, DefaultRating.all, :id, :name) %>
+    </div>
+
+    <div class="field">
+      <%= f.label :comment %><br />
+      <%= f.text_area :comment, rows:"7", ":value": "original_template.comment_value" %>
     </div>
 
     <div class="field">
@@ -94,28 +109,13 @@
     </div>
 
     <div class="field">
-      <%= f.label :price %><br />
-      <%= f.number_field(:price, in: 0..10_000_000, step: 1, value: 0) %>
+      <%= f.label :alcohol %><br />
+      <%= f.number_field(:alcohol, in: 0.0..20.0, step: 0.1, ":value": "original_template.alcohol_value") %>
     </div>
 
     <div class="field">
       <%= f.label :shop %><br />
       <%= f.text_field :shop, ":value": "original_template.shop_value" %>
-    </div>
-
-    <div class="field">
-      <%= f.label :rating_id %><br />
-      <%= f.collection_select(:rating_id, DefaultRating.all, :id, :name) %>
-    </div>
-
-    <div class="field">
-      <%= f.label :comment %><br />
-      <%= f.text_area :comment, rows:"7", ":value": "original_template.comment_value" %>
-    </div>
-
-    <div class="field">
-      <%= f.label :alcohol %><br />
-      <%= f.number_field(:alcohol, in: 0.0..20.0, step: 0.1, ":value": "original_template.alcohol_value") %>
     </div>
 
     <div class="field">
