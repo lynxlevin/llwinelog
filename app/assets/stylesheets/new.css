@@ -1,0 +1,20 @@
+.field {
+  padding: 4px 15px;
+  font-size: 18px;
+}
+
+.input-field {
+  font-size: 18px;
+}
+
+.inline-label {
+  width: 78px;
+  display: inline-block;
+}
+
+.submit-btn {
+  margin: 15px;
+  width: 90px;
+  height: 30px;
+  font-size: 18px;
+}
