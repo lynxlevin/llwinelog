@@ -1,10 +1,20 @@
 .field {
-  padding: 4px 15px;
-  font-size: 18px;
+  padding: 4px 6px;
+  font-size: 20px;
 }
 
 .input-field {
-  font-size: 18px;
+  font-size: 19px;
+  width: 97%;
+  height: 30px;
+}
+
+select.input-field {
+  font-size: 17px;
+}
+
+textarea.input-field {
+  height: 220px;
 }
 
 .inline-label {
