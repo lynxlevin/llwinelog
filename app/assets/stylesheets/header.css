@@ -23,12 +23,14 @@ header {
 .header-left {
   display: flex;
   justify-content: flex-start;
+  align-items: center;
   width: 50%;
 }
 
 .header-right {
   display: flex;
   justify-content: flex-end;
+  align-items: center;
   width: 50%;
 }
 

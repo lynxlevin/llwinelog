@@ -1,0 +1,29 @@
+.records {
+  padding: 7px 0;
+}
+
+.record {
+  width: 98%;
+  padding: 3px 7px;
+  border: 1px solid  #01074249;
+  border-radius: 8px;
+  box-shadow: 1px 2px lightgrey;
+  display: inline-block;
+  margin: 4px;
+  box-sizing: border-box;
+}
+
+.record_row1 {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 2px solid #e7dae4;
+  margin-bottom: 2px;
+}
+
+/* .record_date {
+  padding-left: 7px;
+} */
+
+.record_price {
+  padding-right: 3px;
+}

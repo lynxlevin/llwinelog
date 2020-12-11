@@ -1,4 +1,11 @@
-<% @winelogs.each do |winelog| %>
-  <%= link_to "#{winelog.tasted_date}:  #{winelog.vintage}  #{winelog.wine_name}  #{winelog.producer}", edit_winelog_path(winelog.id) %>
-  <br />
-<% end %>
+<div class="records">
+  <% @winelogs.each do |winelog| %>
+    <%= link_to edit_winelog_path(winelog.id), class: "record" do %>
+      <div class="record_row1">
+        <span class="record_date"><%= winelog.tasted_date.strftime('%Y/%m/%d') %></span>
+        <span class="record_price">   ¥<%= winelog.price %></span>
+      </div>
+      <%= "#{winelog.wine_name} #{winelog.vintage} / #{winelog.producer}" %>
+    <% end %>
+  <% end %>
+</div>
