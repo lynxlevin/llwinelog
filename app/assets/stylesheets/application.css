@@ -66,4 +66,5 @@ body {
   border-top: none;
   border-bottom: none;
   padding-top: 0.1px;
+  box-sizing: border-box;
 }
