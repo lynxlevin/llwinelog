@@ -3,6 +3,7 @@ class CreateOriginalTemplates < ActiveRecord::Migration[6.0]
     create_table :original_templates do |t|
       t.string :template_name, null: false
       t.integer :sort_order
+      t.string :wine_name_value
       t.integer :type_id_value
       t.integer :country_id_value
       t.integer :region1_id_value
@@ -19,7 +20,7 @@ class CreateOriginalTemplates < ActiveRecord::Migration[6.0]
       t.string :shop_value
       t.text :comment_value
       t.integer :alcohol_value
-      t.string :importer_name_value
+      t.string :importer_value
       t.references :user, null: false, foreign_key: true
       t.timestamps
     end

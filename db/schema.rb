@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_11_010657) do
+ActiveRecord::Schema.define(version: 2020_12_11_010311) do
 
   create_table "default_classes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -54,6 +54,7 @@ ActiveRecord::Schema.define(version: 2020_12_11_010657) do
   create_table "original_templates", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "template_name", null: false
     t.integer "sort_order"
+    t.string "wine_name_value"
     t.integer "type_id_value"
     t.integer "country_id_value"
     t.integer "region1_id_value"

@@ -17,6 +17,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
       OriginalTemplate.create(
         template_name: row['template_name'],
         sort_order: row['sort_order'],
+        wine_name_value: row['wine_name_value'],
         type_id_value: row['type_id_value'],
         country_id_value: row['country_id_value'],
         region1_id_value: row['region1_id_value'],
@@ -33,7 +34,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
         shop_value: row['shop_value'],
         comment_value: row['comment_value'],
         alcohol_value: row['alcohol_value'],
-        importer_name_value: row['importer_name_value'],
+        importer_value: row['importer_value'],
         user_id: resource.id
       )
     end
