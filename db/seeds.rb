@@ -71,6 +71,7 @@ CSV.foreach('db/seeds/original_templates.csv', headers: true) do |row|
     shop_value: row['shop_value'],
     comment_value: row['comment_value'],
     alcohol_value: row['alcohol_value'],
-    importer_value: row['importer_name_value']
+    importer_value: row['importer_name_value'],
+    user_id: 1
   )
 end
