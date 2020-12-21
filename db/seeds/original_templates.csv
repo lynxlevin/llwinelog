@@ -1,4 +1,3 @@
-5,Pauillac,5,2,17,1703,Left Bank,Pauillac,,1,2000,Cabernet Sauvignon,Merlot,Cabernet Franc,Petit Verdot,,,,0,
 id,template_name,sort_order,wine_name_value,type_id_value,country_id_value,region1_id_value,region2_value,region3_value,producer_value,class_id_value,vintage_value,grape1_value,grape2_value,grape3_value,grape4_value,grape5_value,shop_value,comment_value,alcohol_value,importer_value
 2,Médoc,2,,2,17,1703,Left Bank,Médoc,,1,2000,Cabernet Sauvignon,Merlot,Cabernet Franc,Petit Verdot,,,,0,
 3,Haut Médoc,3,,2,17,1703,Left Bank,Haut Médoc,,1,2000,Cabernet Sauvignon,Merlot,Cabernet Franc,Petit Verdot,,,,0,
