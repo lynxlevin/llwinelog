@@ -1,5 +1,5 @@
 id,template_name,sort_order,type_id_value,country_id_value,region1_id_value,region2_value,region3_value,producer_value,class_id_value,vintage_value,grape1_value,grape2_value,grape3_value,grape4_value,grape5_value,shop_value,comment_value,alcohol_value,importer_name_value
-1,--,1,1,1,1,,,1,2000,,,,,,,,,0,
+1,--,1,1,1,1,,,,1,2000,,,,,,,,0,
 2,Médoc,2,2,17,1703,Left Bank,Médoc,,1,2000,Cabernet Sauvignon,Merlot,Cabernet Franc,Petit Verdot,,,,0,
 3,Haut Médoc,3,2,17,1703,Left Bank,Haut Médoc,,1,2000,Cabernet Sauvignon,Merlot,Cabernet Franc,Petit Verdot,,,,0,
 4,Saint Estèphe,4,2,17,1703,Left Bank,Saint Estèphe,,1,2000,Cabernet Sauvignon,Merlot,Cabernet Franc,Petit Verdot,,,,0,
