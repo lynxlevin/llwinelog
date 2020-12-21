@@ -47,7 +47,8 @@ group :development do
 end
 
 group :production do
-  gem 'rails_12factor'
+  # gem 'rails_12factor'
+  gem 'unicorn', '5.4.1'
 end
 
 group :test do
