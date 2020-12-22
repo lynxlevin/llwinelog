@@ -1,9 +1,6 @@
 {
   "name": "llwinelog",
   "private": true,
-  "scripts": {
-    "build": "webpack"
-  },
   "dependencies": {
     "@rails/actioncable": "^6.0.0-alpha",
     "@rails/activestorage": "^6.0.0-alpha",
