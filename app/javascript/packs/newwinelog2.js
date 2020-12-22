@@ -31,17 +31,6 @@ window.addEventListener("load", () => {
   setRegion1Options();
   setClassOptions();
 
-  let originalTemplateSelect = document.getElementById("winelog_original_template");
-  originalTemplateSelect.addEventListener("change", toggledTemplate);
-  function toggledTemplate() {
-    let region1Value = region1Select.value;
-    setRegion1Options();
-    region1Select.value = region1Value;
-    let classValue = classSelect.value;
-    setClassOptions();
-    classSelect.value = classValue;
-  }
-
   function toggledCountry() {
     // region1を変更
     setRegion1Options();
