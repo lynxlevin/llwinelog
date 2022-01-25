@@ -18,4 +18,4 @@ https://llwinelog.herokuapp.com/
 
 # Usage
 ログイン後、「記録」ボタン押下で新しく記録をとることができます。
-「Original template」よりワインのタイプを選ぶと、国、地域の情報やブsドウ品種が自動で入力されます。
+「Original template」よりワインのタイプを選ぶと、国、地域の情報やブドウ品種が自動で入力されます。
